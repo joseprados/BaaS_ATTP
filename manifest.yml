@@ -1,0 +1,12 @@
+---
+applications:
+- name: sap-attp-blockchain
+  memory: 128M
+  disk_quota: 512M
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
+  command: npm run start
+  host: sap-attp-blockchain
+  services:
+  - proof-of-history-hlf
+  env:
+    blockchainServiceName: proof-of-history-hlf

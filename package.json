@@ -1,0 +1,16 @@
+{
+  "name": "sapBaaSDevXDemo",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "SAP SE",
+  "dependencies": {
+    "cfenv": "^1.0.4",
+    "express": "^4.16.2",
+    "request": "^2.81.0",
+    "cors": "^2.8.4",
+    "body-parser": "^1.18.2"
+  }
+}

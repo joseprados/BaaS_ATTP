@@ -1,0 +1,31 @@
+ <!DOCTYPE HTML>
+    <html>
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="UTF-8">
+        <title>devX_BaaS</title>
+
+        <script id="sap-ui-bootstrap"
+                src="https://sapui5.hana.ondemand.com/1.52.12/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_belize"
+                data-sap-ui-compatVersion="edge"
+                data-sap-ui-resourceroots='{"sap.baas.devX_BaaS": "./"}'
+                data-sap-ui-frameOptions='deny'
+                data-sap-ui-preload="async">
+        </script>
+
+        <script>
+  sap.ui.getCore().attachInit(function () {
+        x = new sap.ui.core.ComponentContainer({
+          name: "sap.baas.devX_BaaS"
+        }).placeAt("content");
+      });
+		</script>
+    </head>
+
+    <body class="sapUiBody" id="content">
+    </body>
+
+    </html>

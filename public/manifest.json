@@ -1,0 +1,113 @@
+{
+  "_version": "1.8.0",
+  "sap.app": {
+    "id": "sap.baas.devX_BaaS",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach",
+    "sourceTemplate": {
+      "id": "ui5template.basicSAPUI5ApplicationProject",
+      "version": "1.40.12"
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_hcb",
+      "sap_belize"
+
+    ]
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sap.baas.devX_BaaS.view.demo",
+      "type": "XML"
+    },
+    "resources": {
+      "css": [{
+        "uri": "css/style.css"
+      }]
+    },
+    "dependencies": {
+      "minUI5Version": "1.30.0",
+      "libs": {
+        "sap.ui.layout": {},
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.baas.devX_BaaS.i18n.i18n"
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "sap.baas.devX_BaaS.view",
+        "controlAggregation": "pages",
+        "controlId": "idAppControl",
+        "clearControlAggregation": false
+      },
+      "routes": [{
+        "name": "entry",
+        "pattern": "",
+        "target": ["entry"]
+      },
+       {
+         "pattern": "vote/{objectId}",
+         "name": "vote",
+         "target": [
+           "vote"
+         ]
+        }
+      ],
+      "targets": {
+        "entry": {
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "transition": "show",
+          "viewName": "demo",
+          "viewLevel": 1
+        },
+        "vote": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewName": "vote",
+          "viewId": "vote",
+          "viewLevel": 2
+        }
+      }
+    }
+  }
+}

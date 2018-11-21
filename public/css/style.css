@@ -1,0 +1,79 @@
+.ballot {
+    cursor: pointer;
+}
+
+.ballot-text {
+    font-size: 77px;
+    fill: red;
+    font-family: Arial, sans-serif;
+    cursor: default;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+.ballot--disabled {
+    cursor: default;
+}
+
+.ballot select {
+    display: block;
+    padding: 0 .5rem 0 .25rem;
+    border: none;
+    width: 100%;
+    line-height: normal;
+    color: #000;
+    background: transparent url(images/toggle2.svg) no-repeat center right;
+    margin: 0;
+    outline: none;
+    -webkit-appearance: none;
+    height: 100%;
+    font-weight: normal;
+    font-family: Georgia, serif;
+    font-size: .5625rem;
+}
+
+.ballot select:disabled {
+    opacity: 1;
+    color: transparent;
+    background: transparent;
+}
+
+#ballot-id {
+    width: 100%;
+    height: 3.9375rem;
+}
+
+#ballot-id:empty {
+    height: 3.9375rem;
+}
+
+#ballot > svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    border: solid #000 4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 1rem auto;
+    background: #eef6e8;
+    opacity: 1;
+    animation: fade .5s 1 forwards;
+}
+.scaling-svg-container-house-of-representatives {
+    position: relative;
+    height: calc(20rem * 2160/1020);
+    width: 20rem;
+    margin: 0 auto;
+    padding: 0;
+}
+#ballot rect[id*="vote-"]:not([disabled]):not([fill]) {
+    cursor: pointer;
+    fill: #eef6e8;
+}
+.sapBaaSDemoBackground .sapUiGlobalBackgroundColor {
+    background-image: url(images/bg-fiori.svg) !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% auto;
+}

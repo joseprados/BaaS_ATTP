@@ -1,0 +1,74 @@
+<mvc:View controllerName="sap.baas.devX_BaaS.controller.demo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+          class="sapBaaSDemoBackground" xmlns:form="sap.ui.layout.form" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout"  xmlns:uxap="sap.uxap"
+          xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:semantic="sap.m.semantic" xmlns:commons="sap.suite.ui.commons">
+    <App id="idAppControl">
+        <pages>
+            <semantic:FullscreenPage showNavButton="false" title="{i18n>title}" showFooter="false">
+                <HBox>
+                    <VBox direction="Column" id="vbox0" justifyContent="Center" width="100%" alignContent="SpaceBetween" alignItems="Center" fitContainer="true">
+                        <items>
+                            <uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true"
+                                              showHeaderContent="true">
+                                <uxap:headerTitle>
+                                    <uxap:ObjectPageHeader objectImageURI="images/Logo.PNG"
+                                                           objectImageShape="Circle"
+                                                           objectTitle="Merck Co. Pharmaceutical Company"
+                                                           id="ObjectPageLayoutHeaderTitle"
+                                                           isObjectIconAlwaysVisible="false"
+                                                           isObjectTitleAlwaysVisible="false"
+                                                           showPlaceholder="false">
+                                    </uxap:ObjectPageHeader>
+                                  </uxap:headerTitle>
+
+                                <uxap:headerContent>
+                                    <l:VerticalLayout>
+                                        <ObjectStatus title="GTIN" text="{drugs>/data/update/GTIN}"/>
+                                        <ObjectStatus title="Serial Number" text="{drugs>/data/update/SerialNumber}"/>
+                                        <ObjectStatus title="Expiration Date" text="{drugs>/data/update/ExpirationDate}"/>
+                                        <ObjectStatus title="Batch or Lot Number" text="{drugs>/data/update/Batch}"/>
+                                    </l:VerticalLayout>
+                                    <l:VerticalLayout>
+                                        <ImageContent
+                                                class="sapUiLargeMarginTop sapUiLargeMarginBottom"
+                                                src="images/HLF.png">
+                                        </ImageContent>
+
+                                    </l:VerticalLayout>
+                                </uxap:headerContent>
+                                <uxap:sections>
+                                    <uxap:ObjectPageSection title="Events History" titleUppercase="false">
+                                        <uxap:subSections>
+                                            <uxap:ObjectPageSubSection title="">
+                                                <uxap:blocks>
+                                                    <commons:Timeline
+                                                            id="idTimeline"
+                                                            enableDoubleSided="true"
+                                                            growingThreshold="0"
+                                                            sortOldestFirst="true"
+                                                            content="{drugs>/history}"
+                                                            enableScroll="false">
+                                                        <commons:content>
+                                                            <commons:TimelineItem
+                                                                    id="idTemplateItem"
+                                                                    dateTime="{path: 'drugs>timestamp', formatter: '._formatDateTime'}"
+                                                                    title="{drugs>update/Event}"
+                                                                    userNameClickable="true"
+                                                                    text="{parts:[{path:'drugs>update/Location'}, {path: 'drugs>update/Result'}], formatter: '._formatEventText'}"
+                                                                    userName="{drugs>update/Organization}"
+                                                                    userPicture="{path: 'drugs>update/Event', formatter: '._formatEventPicture'}">
+                                                            </commons:TimelineItem>
+                                                        </commons:content>
+                                                    </commons:Timeline>
+                                                </uxap:blocks>
+                                            </uxap:ObjectPageSubSection>
+                                        </uxap:subSections>
+                                    </uxap:ObjectPageSection>
+                                </uxap:sections>
+                            </uxap:ObjectPageLayout>
+                        </items>
+                    </VBox>
+                </HBox>
+            </semantic:FullscreenPage>
+        </pages>
+    </App>
+</mvc:View>
